@@ -1,6 +1,8 @@
 class PostsController < ApplicationController
   before_action :set_post, only: %i[ show edit update destroy ]
-
+#  before_action :authenticate_user! # Asegura que el usuario esté autenticado
+  before_action :check_admin, only: [:new, :edit] # Llama a check_admin solo para la acción "new"
+  
   # GET /posts or /posts.json
   def index
     @posts = Post.all
@@ -8,6 +10,8 @@ class PostsController < ApplicationController
 
   # GET /posts/1 or /posts/1.json
   def show
+    @post = Post.find(params[:id])
+    @comment = Comment.new # Esto es para el formulario de comentario
   end
 
   # GET /posts/new
@@ -17,11 +21,12 @@ class PostsController < ApplicationController
 
   # GET /posts/1/edit
   def edit
+    
   end
 
   # POST /posts or /posts.json
   def create
-    @post = Post.new(post_params)
+    @post = current_user.posts.build(post_params)
 
     respond_to do |format|
       if @post.save
@@ -66,5 +71,11 @@ class PostsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def post_params
       params.require(:post).permit(:title, :legend, :user_id)
+    end
+
+    def check_admin
+      if current_user.nil? || !current_user.admin?
+        redirect_to root_url, alert: "Lo sentimos, no tienes permisos para realizar esta acción"
+      end
     end
 end

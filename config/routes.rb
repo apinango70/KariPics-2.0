@@ -1,11 +1,16 @@
 Rails.application.routes.draw do
-  resources :posts
+ 
+ 
   get 'pages/index'
+ 
   devise_for :users, controllers: {
     sessions: 'users/sessions'
   }
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
+  resources :posts do
+    resources :comments, only: [:create]
+  end
+  
   # Defines the root path route ("/")
- root "pages#index"
+ root "posts#index"
 end
