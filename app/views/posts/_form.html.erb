@@ -11,23 +11,42 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :foto, style: "display: block" %>
-    <%= form.file_field :foto %>
-  </div>
+<div id="contact" class="bg-light pt-5 pb-5">
+  <div class="container">
+     
+    <form class="w-75 m-auto">
+      <!-- Si existe una foto que se adjuntó anteriormente para este post, la muestra. -->
+        <% if post.foto.attached? %>
+          <p>Current photo</p>
+            <%= image_tag post.foto, style: "width: 10%" %>
 
-  <div>
-    <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
-  </div>
+        <% end %>
 
-  <div>
-    <%= form.label :legend, style: "display: block" %>
-    <%= form.text_area :legend %>
+      <div>
+        <%= form.label :foto, style: "display: block" %>
+        <%= form.file_field :foto %>
+      </div>
+      <div class="row mt-3">
+        <div class="col">
+          <div class="form-group">
+            <%= form.label :title, style: "display: block" %>
+            <%= form.text_field :title, class:"form-control form-control-sm" %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="form-group">
+              <%= form.label :legend   %> <br>
+              <%= form.text_area :legend, class: "form-control", cols: 30, rows: 8 %>
+          </div>
+        </div>
+      </div>
+      <div>
+        <!-- Le asigno nil al texto del botón para que tome del sistema si estoy editando o creando el Post-->
+        <%= form.submit nil, class: "btn btn-main btn-block" %>
+        <% end %>
+      </div>
+    </form>
   </div>
-
-
-  <div>
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>

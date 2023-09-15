@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
  
  
-  get 'pages/index'
+  get 'pages/about'
  
   devise_for :users, controllers: {
     sessions: 'users/sessions',

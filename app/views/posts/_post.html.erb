@@ -7,7 +7,9 @@
               <div class="box-post-content bg-white p-5 text-center">
                 <p class="pt-3 small"><a href="#" class="text-main text-uppercase">Travel</a></p>
                 <h4 class="pt-2 pb-2 text-uppercase"><%= post.title %></h4>
-                <p class="text-dark"><%= post.legend %></p>
+                <!-- Muestra solo el primer párrafo del texto del post en el index -->
+                <p class="text-dark"><%= post.legend.split("\n").first %></p>
+
                 <%= link_to "Continue Reading", post, class: "btn btn-outline-main text-uppercase mt-4 mb-4" %>
                 <hr>
                 <div class="row text-secondary small">

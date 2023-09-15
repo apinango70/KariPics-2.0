@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-sm navbar-light bg-light mb-3 p-3 shadow-sm">
+<nav class="navbar navbar-expand-sm navbar-light bg-light mb-3 p-3 shadow-sm sticky-top">
   <div class="container-fluid container">
     <%= link_to 'Logo', root_path, class: 'navbar-brand' %>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -9,6 +9,10 @@
         <li class="nav-item">
           <%= link_to "Home", root_path, class: 'nav-link' %>
         </li>
+        <li class="nav-item">
+          <%= link_to "About me", pages_about_path, class: 'nav-link' %>
+        </li>
+
         <li class="nav-item">
           <% if user_signed_in? && current_user.admin? %>
             <%= link_to 'New Post', new_post_path, class: 'nav-link' %>  

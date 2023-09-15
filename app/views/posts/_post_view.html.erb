@@ -10,7 +10,7 @@
                   <%= post.title %>
                 </h4>
                 <p class="text-dark">
-                  <%= post.legend %>
+                  <%= post.legend.gsub("\n", "<br>").html_safe %>
                 </p>
                 <div>
                   <% if current_user && current_user.admin? %>
@@ -51,22 +51,29 @@
                   <div>
                   </div>
                 </div>
+                  <!-- Formulario de los comentarios-->
+              <div class="row">
+              <div class="col">
+                <div class="form-group">
                   <div>
                     <%= form_with(model: [@post, Comment.new]) do |form| %>
                       <div>
                         <%= form.label :comment, style: "display: block" %>
-                        <%= form.text_area :content %>
+                        <%= form.text_area :content, class: "form-control", cols: 30, rows: 4 %>
                       </div>
                       <div class="container">
-                        <%= form.submit "Add new comment" %>
+                        <%= form.submit "Add new comment", class: "btn btn-main btn-block" %>
                       </div>
                     <% end %>
                   </div>
+                  </div>
+                </div>
+              </div>
                 </div>
               </div>
           </div>
-          <%# Columna derecha %>
         </div>
+        <!-- Columna derecha -->
         <div class="col-lg-4 col-md-4 col-sm-12">
           <div class="card shadow-sm pb-4 mb-5 bg-white rounded">
             <div class="card-body text-center">
