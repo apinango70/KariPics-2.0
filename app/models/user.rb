@@ -24,7 +24,15 @@ class User < ApplicationRecord
                 admin: 'admin',
   }, _default: 'normal'
 
+  
+  # Relaciones
+  # User tiene muchos posts
   has_many :posts
+  
+  # User tiene muchos comentarios
   has_many :comments
+
+  # User tiene una foto
+  has_one_attached :foto
 
 end

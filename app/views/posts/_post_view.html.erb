@@ -1,0 +1,102 @@
+<div id="<%= dom_id post %>">
+  <div id="blog" class="">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-8 col-sm-12">
+          <div class="box-post pb-4 mb-4">
+            <%= image_tag post.foto, class:"w-100" if post.foto.attached? %>
+              <div class="box-post-content bg-white p-5 text-center">
+                <h4 class="pt-2 pb-2 text-uppercase">
+                  <%= post.title %>
+                </h4>
+                <p class="text-dark">
+                  <%= post.legend %>
+                </p>
+                <div>
+                  <% if current_user && current_user.admin? %>
+                    <%= link_to "Edit this post" , edit_post_path(@post),
+                      class: "btn btn-outline-main text-uppercase mt-4 mb-4" %>
+                      <%= button_to "Destroy this post" , @post, method: :delete %>
+                        <% end %>
+                </div>
+                <hr>
+                <div class="box-post-content bg-white p-5">
+                  <div class="row text-secondary small">
+                    <div class="col text-left">
+                      <p>By <%= post.user.username %> On <%= post.created_at.strftime("%B %d, %Y") %>
+                      </p>
+                    </div>
+                    <div class="col text-right">
+                      <p><i class="far fa-comment pr-2"></i>
+                        <%= @post.comments.size %> Comments
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                <div class="about-author margin-top-70 margin-bottom-50">
+                  <h2>Comments:</h2>
+                  <% @post.comments.each do |comment| %>
+                    <div>
+                      <% if comment.user.foto.attached? %>
+                        <%= image_tag comment.user.foto, style: "width: 50px" , class: "foto_circular" %>
+                      <% end %>
+                            <p>
+                              <%= comment.user.username %> <strong>Wrote:</strong>
+                              <p><%= comment.content %></p>
+                            </p>
+                            <hr>
+                    </div>
+                    <% end %>
+                  <div>
+                  </div>
+                </div>
+                  <div>
+                    <%= form_with(model: [@post, Comment.new]) do |form| %>
+                      <div>
+                        <%= form.label :comment, style: "display: block" %>
+                        <%= form.text_area :content %>
+                      </div>
+                      <div class="container">
+                        <%= form.submit "Add new comment" %>
+                      </div>
+                    <% end %>
+                  </div>
+                </div>
+              </div>
+          </div>
+          <%# Columna derecha %>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12">
+          <div class="card shadow-sm pb-4 mb-5 bg-white rounded">
+            <div class="card-body text-center">
+              <img src="img/profile.jpg" alt="" class="w-75 rounded-circle mt-4 mb-3">
+              <%= image_tag "profile.jpg" , class:"w-75 rounded-circle mt-4 mb-3" %>
+                <h5 class="card-title pt-4 pb-2 text-uppercase">Karina Wilsona</h5>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut voluptatibus ullam sit est, similique
+                  minima, delectus rem laborum quod deleniti aspernatur cum suscipit eius praesentium nihil illo
+                  architecto provident facilis!</p>
+                <div class="col pt-3">
+                  <a href="#" class="text-secondary"> <i class="fab fa-facebook-f pr-2"></i></a>
+                  <a href="#" class="text-secondary"><i class="fab fa-twitter pr-2"></i></a>
+                  <a href="#" class="text-secondary"><i class="fab fa-linkedin pr-2"></i></a>
+                  <a href="#" class="text-secondary"><i class="fab fa-instagram pr-2"></i></a>
+                  <a href="#" class="text-secondary"><i class="fab fa-youtube pr-2"></i></a>
+                  <a href="#" class="text-secondary"><i class="fab fa-pinterest pr-2"></i></a>
+                </div>
+            </div>
+          </div>
+          <div class="card shadow-sm pb-4 mb-5 bg-white rounded">
+            <div class="card-body text-center">
+              <h5 class="card-title pt-4 pb-2 text-uppercase">Get Newsletter</h5>
+              <form class="form-inline ml-auto text-center">
+                <input type="text" class="form-control mr-2 w-100 small rounded-0" placeholder="Your email address">
+                <button class="btn btn-main">Subscribe Now</i> </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

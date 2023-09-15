@@ -1,38 +1,3 @@
-<p style="color: green"><%= notice %></p>
-
-<%= render @post %>
-
-<div>
-  <% if current_user && current_user.admin? %>
-    <%= link_to "Edit this post", edit_post_path(@post) %> |
-    <%= button_to "Destroy this post", @post, method: :delete %>
-  <% end %>
-
-<div>
-  <h2>Comentarios:</h2>
-  <% @post.comments.each do |comment| %>
-    <div>
-      <p><strong>Usuario:</strong> <%= comment.user.username %></p>
-      <p><%= comment.content %></p>
-    </div>
-  <% end %>
-</div>
-
-<div>
-  <h2>Agregar Comentario:</h2>
-  <%= form_with(model: [@post, Comment.new]) do |form| %>
-    <div>
-      <%= form.label :content, style: "display: block" %>
-      <%= form.text_area :content %>
-    </div>
-
-    <div>
-      <%= form.submit "Agregar Comentario" %>
-    </div>
-  <% end %>
-</div>
 
 
-    <%= link_to "Back to posts", posts_path %>
-</div>
-
+<%= render partial: 'post_view', locals: { post: @post } %>

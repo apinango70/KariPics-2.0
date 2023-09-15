@@ -10,6 +10,19 @@
 #  updated_at :datetime         not null
 #
 class Post < ApplicationRecord
+
+  #Validaciones
+  validates :title, presence: true
+  validates :legend, presence: true
+  validates :foto, presence: true
+
+  #Relaciones
+  #Un post pertenece a un usuario
   belongs_to :user
-  has_many :comments
+  
+  #Defino borrado en cascada para los posts que tengan comentarios.
+  has_many :comments, dependent: :destroy
+  
+  #Los posts van a tener una foto
+  has_one_attached :foto
 end

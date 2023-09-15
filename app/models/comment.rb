@@ -10,6 +10,13 @@
 #  updated_at :datetime         not null
 #
 class Comment < ApplicationRecord
+
+  # Relaciones
+  
+  # Un comentario pertenece a un usuario
   belongs_to :user
+
+  # Un comentario pertenece a un post
   belongs_to :post
+  
 end

@@ -63,6 +63,7 @@ class PostsController < ApplicationController
   end
 
   private
+
     # Use callbacks to share common setup or constraints between actions.
     def set_post
       @post = Post.find(params[:id])
@@ -70,12 +71,12 @@ class PostsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def post_params
-      params.require(:post).permit(:title, :legend, :user_id)
+      params.require(:post).permit(:title, :legend, :foto)
     end
 
     def check_admin
       if current_user.nil? || !current_user.admin?
-        redirect_to root_url, alert: "Lo sentimos, no tienes permisos para realizar esta acción"
+        redirect_to root_url, alert: "You do not have permissions to perform this action."
       end
     end
 end

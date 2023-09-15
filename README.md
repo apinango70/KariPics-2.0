@@ -1,3 +1,6 @@
+!(Screenshot_KariPics20.jpg)
+
+
 # Proyecto KariPics : Blog para registro de fotos y comentarios.
 
 _Blog sobre fotos y comentarios de visitantes_

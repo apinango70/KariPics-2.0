@@ -7,7 +7,7 @@ class CommentsController < ApplicationController
       @comment.user = current_user
   
       if @comment.save
-        redirect_to @post, notice: "Comentario agregado exitosamente."
+        redirect_to @post, notice: "Comment successfully added!."
       else
         # Manejo de errores si la validación del comentario falla
         render "posts/show"
@@ -17,7 +17,7 @@ class CommentsController < ApplicationController
     private
   
     def comment_params
-      params.require(:comment).permit(:content)
+      params.require(:comment).permit(:content, :foto)
     end
   end
   

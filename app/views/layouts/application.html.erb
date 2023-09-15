@@ -11,10 +11,30 @@
   </head>
    <header>
     <%= render "shared/navbar" %>
+    <div id="title" class="text-center p-5">
+  <div class="container">
+    <h1 class="text-uppercase logo">Karina <span class="text-main">Pics</span> </h1>
+  </div>
+</div>
   </header>
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+
+    <% if notice %>
+      <p class="alert alert-success"><%= notice %></p>
+    <% end %>
+
+    <% if alert %>
+      <p class="alert alert-danger"><%= alert %></p>
+    <% end %>
+
+
+
     <%= yield %>
   </body>
+
+  <footer id="mainfooter" class="text-center p-3">
+    <%= render "shared/footer" %>
+  </footer>
+
 </html>
+</div>
