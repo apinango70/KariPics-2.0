@@ -38,15 +38,20 @@
                   <h2>Comments:</h2>
                   <% @post.comments.each do |comment| %>
                     <div>
+                    <div class="row text-secondary small">
+                    <div class="col text-left">
                       <% if comment.user.foto.attached? %>
                         <%= image_tag comment.user.foto, style: "width: 50px" , class: "foto_circular" %>
                       <% end %>
                             <p>
-                              <%= comment.user.username %> <strong>Wrote:</strong>
+                              <%= comment.user.username %> Wrote On <%= comment.created_at.strftime("%B %d, %Y") %>
                               <p><%= comment.content %></p>
                             </p>
                             <hr>
                     </div>
+                    </div>
+                    </div>
+                    
                     <% end %>
                   <div>
                   </div>
