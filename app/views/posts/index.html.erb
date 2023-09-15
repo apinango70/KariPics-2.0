@@ -1,69 +1,71 @@
-  <div id="blog" class="">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 col-md-8 col-sm-12">
-            <div class="box-post pb-4 mb-4">
-              <% @posts.each do |post| %>
-                <%= render post %>
-              <% end %>
+<div id="blog" class="">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-8 col-sm-12">
+          <div class="box-post pb-4 mb-4">
+          
+            <% @posts.each do |post| %>
+              <%= render post %>
+            <% end %>
+          </div>
+        </div>
+        
+        <div class="col-lg-4 col-md-4 col-sm-12">
+          <div class="card shadow-sm pb-4 mb-5 bg-white rounded">
+            <div class="card-body text-center">
+              <%= image_tag "profile.jpg", alt:"Karina_photo", class: "w-75 rounded-circle mt-4 mb-3" %>
+              <h5 class="card-title pt-4 pb-2 text-uppercase">Karina Esposito</h5>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut voluptatibus ullam sit est, similique minima, delectus rem laborum quod deleniti aspernatur cum suscipit eius praesentium nihil illo architecto provident facilis!</p>
+              <div class="col pt-3">
+                <a href="#" class="text-secondary"> <i class="fab fa-facebook-f pr-2"></i></a>
+                <a href="#" class="text-secondary"><i class="fab fa-twitter pr-2"></i></a>
+                <a href="#" class="text-secondary"><i class="fab fa-linkedin pr-2"></i></a>
+                <a href="#" class="text-secondary"><i class="fab fa-instagram pr-2"></i></a>
+                <a href="#" class="text-secondary"><i class="fab fa-youtube pr-2"></i></a>
+                <a href="#" class="text-secondary"><i class="fab fa-pinterest pr-2"></i></a>
+              </div>
             </div>
           </div>
-          
-          <div class="col-lg-4 col-md-4 col-sm-12">
-            <div class="card shadow-sm pb-4 mb-5 bg-white rounded">
-              <div class="card-body text-center">
-                <%= image_tag "profile.jpg", alt:"Karina_photo", class: "w-75 rounded-circle mt-4 mb-3" %>
-                <h5 class="card-title pt-4 pb-2 text-uppercase">Karina Esposito</h5>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut voluptatibus ullam sit est, similique minima, delectus rem laborum quod deleniti aspernatur cum suscipit eius praesentium nihil illo architecto provident facilis!</p>
-                <div class="col pt-3">
-                  <a href="#" class="text-secondary"> <i class="fab fa-facebook-f pr-2"></i></a>
-                  <a href="#" class="text-secondary"><i class="fab fa-twitter pr-2"></i></a>
-                  <a href="#" class="text-secondary"><i class="fab fa-linkedin pr-2"></i></a>
-                  <a href="#" class="text-secondary"><i class="fab fa-instagram pr-2"></i></a>
-                  <a href="#" class="text-secondary"><i class="fab fa-youtube pr-2"></i></a>
-                  <a href="#" class="text-secondary"><i class="fab fa-pinterest pr-2"></i></a>
-                </div>
-              </div>
+          <div class="card shadow-sm pb-4 mb-5 bg-white rounded">
+            <div class="card-body text-center">
+              <h5 class="card-title pt-4 pb-2 text-uppercase">Get Newsletter</h5>
+              <form class="form-inline ml-auto text-center">
+                <input type="text" class="form-control mr-2 w-100 small rounded-0" placeholder="Your email address">
+                <button class="btn btn-main">Subscribe Now</i> </button>
+              </form>
             </div>
-            <div class="card shadow-sm pb-4 mb-5 bg-white rounded">
-              <div class="card-body text-center">
-                <h5 class="card-title pt-4 pb-2 text-uppercase">Get Newsletter</h5>
-                <form class="form-inline ml-auto text-center">
-                  <input type="text" class="form-control mr-2 w-100 small rounded-0" placeholder="Your email address">
-                  <button class="btn btn-main">Subscribe Now</i> </button>
-                </form>
+          </div>
+          <div class="card shadow-sm pb-4 mb-5 bg-white rounded">
+            <div class="card-body">
+              <h4 class="card-title pt-4 pb-2">Popular Posts</h4>
+              <div class="box-popular pt-3">
+                  <%= image_tag "feature-1.jpg", alt:"", class:"w-100" %>
+                <h6 class="pt-3 pb-1"><a href="article-1.html" class="text-dark">Lorem ipsum it lor sit amet co consectetur</a></h6>
+                <p class="text-secondary small">1hr ago</p>
+                <hr>
               </div>
-            </div>
-            <div class="card shadow-sm pb-4 mb-5 bg-white rounded">
-              <div class="card-body">
-                <h4 class="card-title pt-4 pb-2">Popular Posts</h4>
-                <div class="box-popular pt-3">
-                    <%= image_tag "feature-1.jpg", alt:"", class:"w-100" %>
-                  <h6 class="pt-3 pb-1"><a href="article-1.html" class="text-dark">Lorem ipsum it lor sit amet co consectetur</a></h6>
-                  <p class="text-secondary small">1hr ago</p>
-                  <hr>
-                </div>
-                <div class="box-popular pt-3">
-                  <%= image_tag "feature-2.jpg", alt:"", class:"w-100" %>
-                  <h6 class="pt-3 pb-1"><a href="article-2.html" class="text-dark">Lorem ipsum it lor sit amet co consectetur</a></h6>
-                  <p class="text-secondary small">1hr ago</p>
-                  <hr>
-                </div>
-                <div class="box-popular pt-3">
-                  <%= image_tag "feature-3.jpg", alt:"", class:"w-100" %>
-                  <h6 class="pt-3 pb-1"><a href="article-3.html" class="text-dark">Lorem ipsum it lor sit amet co consectetur</a></h6>
-                  <p class="text-secondary small">1hr ago</p>
-                  <hr>
-                </div>
-                <div class="box-popular pt-3">
-                  <%= image_tag "feature-4.jpg", alt:"", class:"w-100" %>
-                  <h6 class="pt-3 pb-1"><a href="article-4.html" class="text-dark">Lorem ipsum it lor sit amet co consectetur</a></h6>
-                  <p class="text-secondary small">1hr ago</p>
-                  <hr>
-                </div>
+              <div class="box-popular pt-3">
+                <%= image_tag "feature-2.jpg", alt:"", class:"w-100" %>
+                <h6 class="pt-3 pb-1"><a href="article-2.html" class="text-dark">Lorem ipsum it lor sit amet co consectetur</a></h6>
+                <p class="text-secondary small">1hr ago</p>
+                <hr>
+              </div>
+              <div class="box-popular pt-3">
+                <%= image_tag "feature-3.jpg", alt:"", class:"w-100" %>
+                <h6 class="pt-3 pb-1"><a href="article-3.html" class="text-dark">Lorem ipsum it lor sit amet co consectetur</a></h6>
+                <p class="text-secondary small">1hr ago</p>
+                <hr>
+              </div>
+              <div class="box-popular pt-3">
+                <%= image_tag "feature-4.jpg", alt:"", class:"w-100" %>
+                <h6 class="pt-3 pb-1"><a href="article-4.html" class="text-dark">Lorem ipsum it lor sit amet co consectetur</a></h6>
+                <p class="text-secondary small">1hr ago</p>
+                <hr>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
+</div>

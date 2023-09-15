@@ -1,7 +1,5 @@
 <img src="Screenshot_KariPics20.jpg" alt="Screenshot de KariPics"> 
 
-
-
 # Proyecto KariPics : Blog para registro de fotos y comentarios.
 
 _Blog sobre fotos y comentarios de visitantes_
@@ -19,6 +17,28 @@ Para descargar (clonar) este repositorio debes ejecutar en tu cónsola:
 ```hash
 git clone https://github.com/apinango70/KariPics-2.0
 ```
+
+## Sobre el proyecto:
+
+El sistema permite la creación:
+
+<img src="Screenshot_create_post_KariPics20.png" alt="Screenshot de KariPics"> 
+
+edición:
+
+<img src="Screenshot_editing_post_KariPics20.png" alt="Screenshot de KariPics"> 
+
+y porder comentar:
+
+<img src="Screenshot_Comments_KariPics20.png" alt="Screenshot de KariPics"> 
+
+los posts del blog.
+
+__NOTA__: Solo el usuario con el rol admin puede crear, editar o borrar los posts. Los visitantes podrán acceder al index y a los posts, para poder dejar algún comentario en cualquier post se debe registrar.
+
+## Pendiente por hacer:
+
+- Que el admin pueda borrar algún comentario.
 
 ### Pre-requisitos 📋
 
@@ -75,9 +95,31 @@ En el navegador debes ir a la página:
 localhost:3000/
 ```
 
+Para poder usar el blog, debes tener creado un user admin, para hacer esto se debe crear un usuario que tendrá por defecto rol "normal", para cambiar a admin se debe hacer por la consola de rails.
+
+```hash
+rails c
+```
+
+y ejecutar:
+
+```hash
+user = User.find_by(email: 'karina@mail.com')
+user.update(role: 'admin')
+user.save
+```
+
+__NOTA:__ se debe cambiar __user@mail.com__ por el correo que se utilizó para registrar al user que se desea cambiar a admin. 
+
+Verificar si se realizó el cambio:
+
+```hash
+User.last
+```
+
 ## Despliegue 📦
 
-Para hacer un deploy en Herokuu, debes seguir los siguientes pasos en la cónsola:
+Para hacer un deploy en Heroku, debes seguir los siguientes pasos en la cónsola:
 
 * Logearse en heroku
 
