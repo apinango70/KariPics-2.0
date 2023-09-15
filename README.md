@@ -1,4 +1,5 @@
-!(Screenshot_KariPics20.jpg)
+![Screnshot KariPics](/Screenshot_KariPics20.jpgScreenshot_KariPics20.jpg)
+
 
 
 # Proyecto KariPics : Blog para registro de fotos y comentarios.
