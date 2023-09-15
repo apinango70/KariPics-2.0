@@ -1,4 +1,4 @@
-![Screnshot KariPics](/Screenshot_KariPics20.jpgScreenshot_KariPics20.jpg)
+<img src="Screenshot_KariPics20.jpg" alt="Screenshot de KariPics"> 
 
 
 
