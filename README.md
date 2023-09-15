@@ -8,6 +8,12 @@ _Blog sobre fotos y comentarios de visitantes_
 
 ## Comenzando 🚀
 
+Este proyecto utiliza las gemas:
+
+devise
+active_storage
+annotate
+
 Para descargar (clonar) este repositorio debes ejecutar en tu cónsola:
 
 ```hash
@@ -50,29 +56,11 @@ bundle add devise annotate faker
 
 Para mostrar localmente este proyecto, debes garantizar que todas las dependencias de gemas estén configuradas correctamente, para eso debes ejecutar:
 
-Agregar la gema faker (solo si se van a crear user admin por defecto)
-
-```hash
-bundle add faker
-```
-
 Se debe crear la base de datos y correr la migración ejecutando:
 
 ```hash
 rails db:create
 rails db:migrate
-```
-
-Instalar devise
-
-```hash
-rails g devise:install
-```
-
-Instalar active_storage
-
-```hash
-rails active_storage:install
 ```
 
 Una vez que se han actualizado todas las gemas, creado la base de datos y generado los datos de prueba, se debe montar el servidor ejecutando:
