@@ -28,13 +28,11 @@ edición:
 
 <img src="Screenshot_editing_post_KariPics20.png" alt="Screenshot de KariPics"> 
 
-y porder comentar:
+y porder comentar los posts del blog.
 
 <img src="Screenshot_Comments_KariPics20.png" alt="Screenshot de KariPics"> 
 
-los posts del blog.
-
-__NOTA__: Solo el usuario con el rol admin puede crear, editar o borrar los posts. Los visitantes podrán acceder al index y a los posts, para poder dejar algún comentario en cualquier post se debe registrar.
+__NOTA__: Solo el usuario con el rol admin puede crear, editar o borrar los posts. Los visitantes podrán acceder al index y a los posts, para poder dejar algún comentario el visitante se debe registrar en el sistema.
 
 ## Pendiente por hacer:
 
@@ -181,6 +179,7 @@ Para el desarrollo de este proyecto se utilizaron las sigientes heramientas
 * [Rails 7.0.6](https://rubyonrails.org/)
 * [Bootstrap 5.3](https://getbootstrap.com/docs/5.3/getting-started/download/)
 * [Postgresql 14.8](https://www.postgresql.org/)
+* [Frontend tomado de:](https://github.com/irimaya/067-minimalistic-blog)
 
 ## Contribuyendo 🖇️
 
