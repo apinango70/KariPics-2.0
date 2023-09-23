@@ -2,10 +2,10 @@ class PostsController < ApplicationController
   before_action :set_post, only: %i[ show edit update destroy ]
 #  before_action :authenticate_user! # Asegura que el usuario esté autenticado
   before_action :check_admin, only: [:new, :edit] # Llama a check_admin solo para la acción "new"
-  
+
   # GET /posts or /posts.json
   def index
-    @posts = Post.all
+    @posts = Post.order(created_at: :desc) # Esto ordenará los posts por fecha de creación descendente (más nuevo primero)
   end
 
   # GET /posts/1 or /posts/1.json
@@ -21,7 +21,7 @@ class PostsController < ApplicationController
 
   # GET /posts/1/edit
   def edit
-    
+
   end
 
   # POST /posts or /posts.json
