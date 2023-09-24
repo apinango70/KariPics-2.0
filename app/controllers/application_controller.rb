@@ -12,6 +12,7 @@ class ApplicationController < ActionController::Base
       root_path  # Redirige al usuario a la ruta root
     end
 
+    # gema pagy disponible para todos los controllers
     include Pagy::Backend
 
   end

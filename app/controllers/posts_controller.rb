@@ -5,7 +5,9 @@ class PostsController < ApplicationController
 
   # GET /posts or /posts.json
   def index
-    @posts = Post.order(created_at: :desc) # Esto ordenará los posts por fecha de creación descendente (más nuevo primero)
+    #@posts = Post.all
+    #@posts = Post.order(created_at: :desc)
+    @pagy, @posts = pagy(Post.order(created_at: :desc), items: 5) # Paginación
   end
 
   # GET /posts/1 or /posts/1.json
